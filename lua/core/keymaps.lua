@@ -1,0 +1,3 @@
+vim.o.number = true
+
+
