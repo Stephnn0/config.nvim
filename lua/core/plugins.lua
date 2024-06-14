@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
+  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
   -- completion
   use 'hrsh7th/nvim-cmp'
@@ -26,12 +26,16 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
   use 'github/copilot.vim'
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  require("toggleterm").setup()
+end}
 
   use {
   'nvim-telescope/telescope.nvim',
    tag = '0.1.6',
    requires = { {'nvim-lua/plenary.nvim'} }
   }
+  -- lsp config 
   use {
    "williamboman/mason.nvim",
    "williamboman/mason-lspconfig.nvim",
