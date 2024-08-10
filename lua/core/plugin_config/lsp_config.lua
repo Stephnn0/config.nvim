@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = {"lua_ls","clangd", "tsserver"},
+  ensure_installed = {"lua_ls","clangd", "tsserver", "gopls"},
 })
 
 
@@ -52,7 +52,7 @@ lspconfig.tsserver.setup {
   capabilities = capabilities,
   init_options = {
     preferences = {
-      disableSuggestions = true,
+      disableSuggestions = false,
     },
   },
   settings = {
@@ -60,12 +60,30 @@ lspconfig.tsserver.setup {
       completeFunctionCalls = true
     }
   },
-  filetypes = {
+    filetypes = {
     "javascript",
     "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "ts",
+    "js",
+    "vue"
   },
+  cmd = {
+     "typescript-language-server", "--stdio"
+  }
 }
 
+-- ========================= Configure gopls (Goland language server) =============
+
+lspconfig.gopls.setup {
+ on_attach = on_attach,
+ capabilities = capabilities,
+ cmd = {"gopls"},
+ filetypes = { "go", "gomod", "gowork", "gotmpl"},
+
+
+}
 
 -- ========================= Configure clangd (C/C++ language server) =============
 

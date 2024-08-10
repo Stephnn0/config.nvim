@@ -18,6 +18,9 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+  
+  -- colorScheme
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- completion
   use 'hrsh7th/nvim-cmp'
