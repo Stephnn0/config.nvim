@@ -12,7 +12,13 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-  use 'nvimtools/none-ls.nvim'
+  -- autoformatter
+  use {
+     'stevearc/conform.nvim', 
+     config = function()
+	require("conform").setup()
+     end
+  }
   use 'wbthomason/packer.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-tree.lua'
