@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = {"lua_ls","clangd", "tsserver", "gopls"},
+  ensure_installed = {"lua_ls","clangd", "tsserver", "gopls", "eslint_lsp", "prettierd"},
 })
 
 
@@ -73,6 +73,11 @@ lspconfig.tsserver.setup {
      "typescript-language-server", "--stdio"
   }
 }
+
+lspconfig.eslint.setup({
+   on_attach = on_attach,
+   capabilities = capabilities,
+})
 
 -- ========================= Configure gopls (Goland language server) =============
 
