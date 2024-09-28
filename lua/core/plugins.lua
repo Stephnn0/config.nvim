@@ -1,9 +1,9 @@
 local ensure_packer = function()
 	local fn = vim.fn
-	local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-		vim.cmd [[packadd packer.nvim]]
+		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+		vim.cmd([[packadd packer.nvim]])
 		return true
 	end
 	return false
@@ -11,52 +11,60 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
+return require("packer").startup(function(use)
 	-- autoformatter
-	use {
-		'stevearc/conform.nvim',
+	use({
+		"stevearc/conform.nvim",
 		config = function()
 			require("conform").setup()
-		end
-	}
+		end,
+	})
 	-- linter
-	use 'mfussenegger/nvim-lint'
-	use 'wbthomason/packer.nvim'
-	use 'ellisonleao/gruvbox.nvim'
-	use 'nvim-tree/nvim-tree.lua'
-	use 'nvim-tree/nvim-web-devicons'
-	use 'nvim-lualine/lualine.nvim'
-	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+	use("mfussenegger/nvim-lint")
+	-- Package Manager
+	use("wbthomason/packer.nvim")
+	use("ellisonleao/gruvbox.nvim")
+	-- File Tree
+	use("nvim-tree/nvim-tree.lua")
+	-- Icons
+	use("nvim-tree/nvim-web-devicons")
+	-- Status Bar
+	use("nvim-lualine/lualine.nvim")
+	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
 	-- colorScheme
-	use { "catppuccin/nvim", as = "catppuccin" }
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- completion
-	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'L3MON4D3/LuaSnip'
-	use 'saadparwaiz1/cmp_luasnip'
-	use 'rafamadriz/friendly-snippets'
-	use 'github/copilot.vim'
-	use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-		require("toggleterm").setup()
-	end }
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-nvim-lsp")
+	use("L3MON4D3/LuaSnip")
+	use("saadparwaiz1/cmp_luasnip")
+	use("rafamadriz/friendly-snippets")
+	use("github/copilot.vim")
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
 
-	use {
-		'nvim-telescope/telescope.nvim',
-		tag = '0.1.6',
-		requires = { { 'nvim-lua/plenary.nvim' } }
-	}
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.6",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 	-- lsp config
-	use {
+	use({
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
-	}
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
-		require('packer').sync()
+		require("packer").sync()
 	end
 end)
