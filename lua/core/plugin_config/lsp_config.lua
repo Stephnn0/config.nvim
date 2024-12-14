@@ -12,6 +12,14 @@ local on_attach = function(_, bufnr)
 	keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
+
+	-- Open diagnostic float
+	vim.keymap.set("n", "df", vim.diagnostic.open_float, opts)
+
+	-- Go to next diagnostic
+	vim.keymap.set("n", "dn", vim.diagnostic.goto_next, opts)
+	-- Go to previous diagnostic
+	vim.keymap.set("n", "dp", vim.diagnostic.goto_prev, opts)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
