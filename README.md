@@ -24,3 +24,20 @@ Packer.nvim - Plugin Manager.
 # Icons
 
 - download hack nerd fonts
+
+
+# Installation 
+
+(preferably compiled nvim from source, u need nvim +10 version)
+
+1- copy project in ~/config/nvim
+
+2- nvim (will download all packages)
+
+3- Mason: (to install lsps) (go needs to be installed in ur system)
+
+4- download, extract and copy nerd fonts to ~/Fonts
+
+5- sudo apt-get install xclip (enable copy/paste buffers)
+
+

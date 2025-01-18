@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "tsserver", "gopls" },
+	ensure_installed = { "lua_ls", "clangd", "ts_ls", "gopls", "pyright" },
 })
 
 local lspconfig = require("lspconfig")
@@ -49,7 +49,7 @@ lspconfig.lua_ls.setup({
 })
 -- ========================= Configure ts_server (Ts/Js language server) =============
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	init_options = {
@@ -86,6 +86,15 @@ lspconfig.gopls.setup({
 	cmd = { "gopls" },
 	filetypes = { "go", "gomod", "gowork", "gotmpl" },
 })
+
+-- ========================= Configure pyright (Python language server) =============
+
+
+lspconfig.pyright.setup({
+	on_attach = on_attach,
+	capabilities = capabilities
+})
+
 
 -- ========================= Configure clangd (C/C++ language server) =============
 
