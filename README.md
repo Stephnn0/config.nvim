@@ -25,8 +25,7 @@ Packer.nvim - Plugin Manager.
 
 - download hack nerd fonts
 
-
-# Installation 
+# Installation
 
 (preferably compiled nvim from source, u need nvim +10 version)
 
@@ -40,4 +39,8 @@ Packer.nvim - Plugin Manager.
 
 5- sudo apt-get install xclip (enable copy/paste buffers)
 
+# Packages
 
+- Package Manager: Packer
+- Fuzzy Finder: Telescope
+- Parser: Treesitter (highlighting, indenting)
