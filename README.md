@@ -44,3 +44,7 @@ Packer.nvim - Plugin Manager.
 - Package Manager: Packer
 - Fuzzy Finder: Telescope
 - Parser: Treesitter (highlighting, indenting)
+
+- undo tree
+- harpoon
+- tpope/vim-fugitive

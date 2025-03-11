@@ -89,12 +89,10 @@ lspconfig.gopls.setup({
 
 -- ========================= Configure pyright (Python language server) =============
 
-
 lspconfig.pyright.setup({
 	on_attach = on_attach,
-	capabilities = capabilities
+	capabilities = capabilities,
 })
-
 
 -- ========================= Configure clangd (C/C++ language server) =============
 
