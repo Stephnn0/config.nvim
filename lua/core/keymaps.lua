@@ -9,3 +9,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.api.nvim_set_keymap("v", "cl", ":s/^/\\/\\/ /<CR>", { noremap = true, silent = true })
 -- Uncomment selected lines
 vim.api.nvim_set_keymap("v", "ul", ":s/\\/\\/ //<CR>", { noremap = true, silent = true })
+
+-- Autopair for curly braces
+vim.keymap.set("i", "{", "{}<Left>")
+vim.keymap.set("i", "(", "()<Left>")
+vim.keymap.set("i", "[", "[]<Left>")
+vim.keymap.set("i", '"', '""<Left>')
+vim.keymap.set("i", "'", "''<Left>")

@@ -35,7 +35,7 @@ Packer.nvim - Plugin Manager.
 
 3- Mason: (to install lsps) (go needs to be installed in ur system)
 
-4- download, extract and copy nerd fonts to ~/Fonts
+4- download, extract and copy nerd fonts to ~/Fonts (Hack.zip)
 
 5- sudo apt-get install xclip (enable copy/paste buffers)
 

@@ -29,7 +29,11 @@ gr ---> find all reference
 
 ## -------------------- CODING ------------------------
 
-f + (any word) ---> jump horizontally to it
+50 % ---> jump to middle of file
+
+F + (any word) ---> jump horizontally backwards to it
+f + (any word) ---> jump horizontally forward to it
+
 gg --> jump begining of file
 CAPITAL G --> jump end of file
 
@@ -46,3 +50,8 @@ p ---> paste
 u ---> undo
 
 diw ---> delete inner word
+
+di{ or di( ---> delete inside { or (
+di" or di" ---> delete inside " or "
+
+vi{ or vi( ---> select inside { or (
