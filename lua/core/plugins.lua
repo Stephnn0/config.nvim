@@ -12,6 +12,8 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
+	-- java
+	use("mfussenegger/nvim-jdtls")
 	-- autoformatter
 	use({
 		"stevearc/conform.nvim",

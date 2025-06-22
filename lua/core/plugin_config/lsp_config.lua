@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "ts_ls", "gopls", "pyright" },
+	ensure_installed = { "lua_ls", "clangd", "ts_ls", "gopls", "pyright", "jdtls" },
 })
 
 local lspconfig = require("lspconfig")
@@ -90,6 +90,13 @@ lspconfig.gopls.setup({
 -- ========================= Configure pyright (Python language server) =============
 
 lspconfig.pyright.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+-- ========================= Configure jdtls (Java language server) =============
+
+lspconfig.jdtls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
